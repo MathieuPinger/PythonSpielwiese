@@ -23,15 +23,25 @@ print(things)
 
 # remove with del, pop and remove
 
+# delete with numerical indexing
+# del is a STATEMENT
 del things[1]
 print(things)
 
+# Popped out slices can be reassigned!
+# pop is a METHOD
 first_thing = things.pop(0)
 print(first_thing)
 print(things)
 
+# delete by specifying the value
 things.remove('startrek')
 print(things)
+# what happens with multiple values?
+# it only removes the first element that matches the string
+thingies = ['a', 'a', 'b', 'a', 'c']
+thingies.remove('a')
+print(thingies)
 
 # sort
 
