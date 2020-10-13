@@ -34,7 +34,17 @@ things.remove('startrek')
 print(things)
 
 # sort
+
+# permanently: with sort
+things = ["starwars", "lotr", "startrek"]
+things.sort()
+print(things)
+
+# temporarily: with sorted
 things.append('planet of the apes')
 print(sorted(things))
 print(things)
 print(things.reverse())
+
+# Lengths
+len(things)
