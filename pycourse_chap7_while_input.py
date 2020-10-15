@@ -60,7 +60,7 @@ prompt = "How much do you want to pay? Enter a number: "
 prompt += "Or enter 'q' to quit."
 
 active = True
-while active:
+while active: # runs until active is False or Empty
     answer = input(prompt)
 
     if answer == 'q':
@@ -71,3 +71,49 @@ while active:
     elif int(answer) < 100:
         print("Hmm we need a lil bit more!")
 
+# The same with "while True" and break statement
+prompt = "How much do you want to pay? Enter a number: "
+prompt += "Or enter 'q' to quit."
+
+while True:
+    answer = input(prompt)
+
+    if answer == 'q':
+        break
+    elif int(answer) > 99:
+        print("OK that's enough, bye!")
+        break
+    elif int(answer) < 100:
+        print("Hmm we need a lil bit more!")
+        
+# Remove items with while
+stuff = [1, 1, 1, 2, 3, 4, 1, 3, 1]
+while 1 in stuff:
+    stuff.remove(1)
+
+# Modify lists with while instead of for
+sandwich_orders = ["pastrami", "pastrami", "tuna", "tuna", "mozzarella", "PBJ", "Cesar"]
+finished_sandwiches = []
+
+while sandwich_orders:
+    made_sandwich = sandwich_orders.pop()
+    print(f"{made_sandwich.title()} sandwich has been served.")
+    finished_sandwiches.append(made_sandwich)
+
+# dictionaries with while: polling
+polling_active = True
+responses = {}
+
+while polling_active:
+    name = input("Enter your name: ")
+    vacation = input("Where would you like to spend your vacation? ")
+    
+    responses[name] = vacation
+    
+    repeat = input("More participants? (y/n) ")
+    if repeat == 'n':
+        polling_active = False
+
+for name, vacation in responses.items():
+    print(f"{name.title()} would like to spend their vacation in {vacation}.")
+    
